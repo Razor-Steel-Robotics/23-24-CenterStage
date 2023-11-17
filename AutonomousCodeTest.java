@@ -85,28 +85,10 @@ public class AutonomousCodeTest extends LinearOpMode {
         waitForStart();
         if (opModeIsActive()) {
 
-            //segment 1
-            drive(0.7, 30, 15);
-
             runtime.reset(); // reset elapsed time timer
+            //segment 1
+            drive(0.1, 10, 0);
 
-            //segment 2 - lift arm, drive to shipping hub, outtake freight
-            while (opModeIsActive() && runtime.seconds() <= 7) {
-
-
-                //drive forward for 1 second
-                while (runtime.seconds() > 2 && runtime.seconds() <= 3) {
-                    drive(0.4, 4, 4);
-                }
-
-
-
-                //segment 3 - reverse to get better angle
-                drive(0.7, -15, -30);
-
-                //segment 4 - drive into warehouse
-                drive(1, 90, 90);
             }
         }
     }
-}
